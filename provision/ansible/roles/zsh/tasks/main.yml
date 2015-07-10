@@ -1,0 +1,14 @@
+---
+- name: Install zsh & git
+  with_items:
+    - git
+    - zsh
+  apt: name={{ item }} state=present
+
+- name: Set zsh as shell for vagrant user
+  shell: chsh -s $(which zsh) vagrant
+
+- name: Install oh-my-zsh for vagrant user
+  sudo: true
+  sudo_user: vagrant
+  shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" || /bin/true

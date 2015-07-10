@@ -1,0 +1,6 @@
+---
+- name: Add nodejs v0.12 repo
+  shell: curl --silent --location https://deb.nodesource.com/setup_0.12 | sudo bash -
+
+- name: Install nodejs
+  apt: name=nodejs state=present

@@ -1,0 +1,15 @@
+---
+- name: Install yeoman, bower, gulp, grunt, grunt-cli globally
+  with_items:
+    - yo
+    - bower
+    - gulp
+    - grunt
+    - grunt-cli
+  npm: name={{ item }} global=yes
+
+- name: Install some generators
+  with_items:
+    - angular-fullstack
+    - webapp
+  npm: name=generator-{{ item }} global=yes

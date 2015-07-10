@@ -1,0 +1,8 @@
+---
+- name: install ruby
+  apt: name=ruby-full state=present
+- name: install sass and compass
+  with_items:
+    - sass
+    - compass
+  gem: name={{ item }}

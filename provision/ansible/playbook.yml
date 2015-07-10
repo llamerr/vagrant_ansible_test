@@ -1,0 +1,20 @@
+---
+- hosts: all
+  remote_user: root
+
+  tasks:
+
+  roles:
+    - lxde
+    - firefox
+    - chrome
+    - sass-compass
+    - zsh
+    - nodejs
+    - nodejs-tools
+    - oracle-jdk
+    - phpstorm
+    - enrise.mongodb
+    - guillaumededrie.couchdb
+    - geerlingguy.mysql
+    - system-tools

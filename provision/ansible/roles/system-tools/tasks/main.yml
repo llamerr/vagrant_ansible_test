@@ -1,0 +1,7 @@
+---
+- name: Install mc, htop, screen
+  with_items:
+    - mc
+    - htop
+    - screen
+  apt: pkg={{ item }} state=present

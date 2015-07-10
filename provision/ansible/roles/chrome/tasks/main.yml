@@ -1,0 +1,10 @@
+---
+- name: Setup key
+  shell: wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+- name: Setup repository
+  shell: sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+- name: Setup package
+  apt: pkg={{ item }} state=latest update_cache=yes
+  with_items:
+      - google-chrome-stable
+      - google-chrome-beta

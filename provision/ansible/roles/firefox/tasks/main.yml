@@ -1,0 +1,5 @@
+---
+- name: Add Firefox Beta PPA
+  apt_repository: repo='ppa:mozillateam/firefox-next'
+- name: Install Firefox
+  apt: pkg=firefox state=latest
